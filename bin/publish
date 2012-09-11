@@ -1,0 +1,14 @@
+set -e
+mkdir -p .tmp
+rm -rf .tmp/ghpages
+git clone --no-checkout $(git config --local remote.origin.url) .tmp/ghpages
+cd .tmp/ghpages/
+git checkout --orphan gh-pages
+git rm -rf .
+wget -m http://dev1.local:4085 || true
+mv dev1.local\:4085/* .
+rmdir dev1.local\:4085
+git add .
+git commit -m 'initial commit'
+git clean -fdx
+git push -f origin gh-pages
