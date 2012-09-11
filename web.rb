@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'maruku'
 
+class App12Factors  < Sinatra::Application
+
 get '/' do
   erb :home
 end
@@ -36,4 +38,6 @@ end
 
 not_found do
   "Page not found"
+end
+
 end
