@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = https://github.com/destructuring/content-12factors
