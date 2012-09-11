@@ -4,3 +4,5 @@
 /config/unicorn.rb
 /libexec/
 /log
+/.bundle
+/vendor/bundle

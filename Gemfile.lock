@@ -15,6 +15,8 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.3.2)
+    unicorn (1.1.7)
+      rack
 
 PLATFORMS
   ruby
@@ -23,3 +25,4 @@ DEPENDENCIES
   maruku (= 0.6.0)
   sinatra (= 1.2.6)
   thin (= 1.2.7)
+  unicorn (~> 1.1.5)
