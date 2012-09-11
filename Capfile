@@ -17,4 +17,4 @@ after "deploy:restart", "gitscm:restart"
 # interesting hosts
 Deploy self, __FILE__ do |admin, node| 
   { :deploy => { } }
-
+end
