@@ -1,3 +1,3 @@
-require 'web'
+require './web.rb'
 
 run App12Factors.new
