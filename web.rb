@@ -26,13 +26,13 @@ helpers do
   def render_prev(factor)
     idx = TOC.index(factor)
     return if idx == 0
-    "<a href=\"/#{TOC[idx-1]}\">&laquo; Previous</a>"
+    "<a href=\"#{TOC[idx-1]}\">&laquo; Previous</a>"
   end
 
   def render_next(factor)
     idx = TOC.index(factor)
     return if idx == TOC.size-1
-    "<a href=\"/#{TOC[idx+1]}\">Next &raquo;</a>"
+    "<a href=\"#{TOC[idx+1]}\">Next &raquo;</a>"
   end
 end
 
