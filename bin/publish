@@ -20,6 +20,10 @@ source "$shome/bin/_treadstone"
 function main {
   local url_origin="$(git config --local remote.origin.url)"
 
+  bundle exec unicorn &
+  local pid_unicorn="$!"
+  sleep 5
+
   rm -rf $shome/.tmp/ghpages
   git clone --no-checkout $shome $shome/.tmp/ghpages
 
@@ -27,9 +31,11 @@ function main {
   git checkout --orphan gh-pages
   git rm -rf .
   
-  local url_docs="http://dev1.local:4085"
-  
+  local url_docs="http://localhost:8080"
   wget -m $url_docs || true
+  kill "$pid_unicorn" 
+  wait
+
   set +f
   mv "${url_docs#*://}"/* .
   set -f
