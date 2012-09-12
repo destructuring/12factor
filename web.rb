@@ -9,18 +9,15 @@ get '/' do
   erb :home
 end
 
-get '/:factor.html' do |factor|
+get '/:factor' do |factor|
   halt 404 unless TOC.include?(factor)
   @factor = factor
   erb :factor
 end
 
-get '/:factor' do |factor|
-  redirect "/#{factor}.html"
-end
-
 helpers do
   def render_markdown(file)
+    file = file.sub(".html", "")
     markdown = File.read("content/#{file}.md")
     Maruku.new(markdown).to_html
   rescue Errno::ENOENT
