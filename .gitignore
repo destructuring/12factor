@@ -6,3 +6,4 @@
 /log
 /.bundle
 /vendor/bundle
+*.orig
