@@ -9,10 +9,14 @@ get '/' do
   erb :home
 end
 
-get '/:factor' do |factor|
+get '/:factor.html' do |factor|
   halt 404 unless TOC.include?(factor)
   @factor = factor
   erb :factor
+end
+
+get '/:factor' do |factor|
+  redirect "/#{factor}.html"
 end
 
 helpers do
