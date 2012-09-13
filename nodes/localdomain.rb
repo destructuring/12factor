@@ -8,4 +8,3 @@ home_dir ENV['HOME']
 app_env "development"
 node_env "localdomain"
 dpp_dir "."
-ruby_loader "rvm-exec"
