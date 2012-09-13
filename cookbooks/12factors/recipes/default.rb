@@ -19,3 +19,9 @@ else
     creates "/etc/init.d/#{node[:app_name]}"
   end
 end
+
+if node[:env_pod] == "localdomain"
+  link "#{node[:release_dir]}/current" do
+    to "."
+  end
+end
