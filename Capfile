@@ -11,7 +11,7 @@ namespace :gitscm do
       service_loader="libexec/server"
     else
       service_dir="."
-      service_loader="sudo service"
+      service_loader="libexec/server"
     end
 
     run "cd #{service_dir} && #{service_loader} zendesk_geminabox reload"
