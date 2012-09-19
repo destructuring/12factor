@@ -3,18 +3,18 @@
 require 'alpha_omega/deploy'
 load 'config/deploy'
 
-# gitscm deploy
-namespace :gitscm do
+# 12factors deploy
+namespace :12factors do
   task :restart do
     service_dir=deploy_release
     service_loader="libexec/server"
-    run "cd #{service_dir} && #{service_loader} zendesk_geminabox reload"
+    run "cd #{service_dir} && #{service_loader} #{application} reload"
   end
 end
 
 # hooks into alpha_omega deploy
 after "deploy:cook", "microwave:cook"
-after "deploy:restart", "gitscm:restart"
+after "deploy:restart", "12factors:restart"
 
 # interesting hosts
 Deploy self, __FILE__ do |admin, node| 
