@@ -1,0 +1,6 @@
+---
+remotes:
+  vendor: https://github.com/adamwiggins/12factor
+  primary: git@github.com:destructuring/12factor
+  secondary: git@bitbucket.org:destructuring/12factor
+  sh: https://github.com/destructuring/jason
